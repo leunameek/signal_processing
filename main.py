@@ -16,13 +16,13 @@ def config_subplot(ax, title):
     ax.set_xlim(-0.02, 0.02)
     ax.tick_params(axis='both', which='major', labelsize=8)
 
-# 1. Señal senoidal (Señal A)
+# 1. Señal A, señal senoidal
 ax1 = plt.subplot(6, 1, 1)
 A = 4 * np.sin(2 * np.pi * t / 0.01)
 ax1.plot(t, A)
 config_subplot(ax1, 'Señal A: Seno de 10ms 4 unidades de amplitud')
 
-# 2. Escalón unitario (Señal B)
+# 2. Señal B, escalón unitario 
 ax2 = plt.subplot(6, 1, 2)
 B = 1.0 * (t >= 0)
 ax2.plot(t, B)
@@ -38,13 +38,13 @@ ax4 = plt.subplot(6, 1, 4)
 ax4.plot(t, A * B)
 config_subplot(ax4, 'Multiplicación A * B')
 
-# 5. Corrimiento de A en atraso (3ms)
+# 5. Señal A atrasada 3ms
 ax5 = plt.subplot(6, 1, 5)
 A_shift = 4 * np.sin(2 * np.pi * (t - 0.003) / 0.01)
 ax5.plot(t, A_shift)
 config_subplot(ax5, 'Señal A con retardo de 3ms')
 
-# 6. Corrimiento de B en adelanto (5ms)
+# 6. Señal B adelantada 5ms
 ax6 = plt.subplot(6, 1, 6)
 B_shift = 1.0 * (t >= -0.005)
 ax6.plot(t, B_shift)
