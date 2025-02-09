@@ -50,6 +50,5 @@ B_shift = 1.0 * (t >= -0.005)
 ax6.plot(t, B_shift)
 config_subplot(ax6, 'Señal B con adelanto de 5ms')
 
-# Ajuste automático de layout
 plt.tight_layout()
 plt.show()
