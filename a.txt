@@ -1,0 +1,18 @@
+Operaciones basicas de señales (Variables Dependientes)
+  1. escalado de aplitud de señales.
+  2. adicion de señales.
+  3. multiplicacion de señales.
+
+Operaciones basicas de señales (Variables Independientes)
+  1. Escalado temporal de señales.
+  2. Reflexion de las señales.
+  3. cambio de tiempo de las señales.
+
+Las operaciones pueden agruparse y realizarse en conjunto, 
+es decir, una misma señal puede sufrir de atraso, dilatación 
+y atenuación en la misma operación, por lo cual la siguiernte
+representacion tiene toda validez.
+     
+     y(t) = A * sen((w*t) - t0)
+
+
