@@ -15,4 +15,15 @@ representacion tiene toda validez.
      
      y(t) = A * sen((w*t) - t0)
 
+x(n) = {
+  n < 0 x = 0
+  n >= 0 x = n
+}
 
+Dilatar en el tiempo (1/2)n
+Comprimir en el tiempo 2n
+
+¿Cuando se hace una dilatación temporal de una variable
+discreta, qué pasa con los valores no discretos?
+
+stem
