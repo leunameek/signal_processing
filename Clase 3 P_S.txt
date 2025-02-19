@@ -1,0 +1,63 @@
+Operaciones básica de señales (variables dependientes)
+En esta transformación, sólo se modifican los valores del eje cuadratura, es decir cambia la  magnitud de la señal
+sin efectos sobre los calores del eje horizontal o la periodicidad de las señales
+
+Escalado de la amplitud de las señales
+El escalado de la amplitud es una operaic´n básica que se realiza en las señales para variar su fuerza.
+Se puede representar matemácamente como Y(t)=A*X(t)
+En este caso A, es el factor de escala
+Con valores A>1 se amplifica y si A<1 se atenúa la señal (Se reduce)
+
+Adición de Señales
+Esta operacion particular implica la adición de la amplitud de dos o más señales en cada insancia de tiempo o cualquier
+otra variable independiente que sea común entre señales
+Y(t)=X1(t)+X2(t)
+
+Multiplicación de señales
+La multiplicación se hace realizando el pridco de la amplitud de ds o más señales en cada instancia de tiempo o cualqie otra 
+variable independiente  que sea común enre las señales. La señal resultante que  obtenemos tiene valores iguales al producto 
+de la ampitud de las señales parentales para cada instancia de tiempo
+Y(t)=X1(t)*X2(t)
+
+Diferenciación de señales
+Para la diferenciación de las señales, hay que señalar que esta operación sólo es aplicable para las señales continuas, ya 
+que no se uede diferenciar una funcion discreta. La señal modificada que obtenemos en a diferenciación tiene valores tangenciales
+ de la señal madre en todo el momento. Matemáticamente se puede expresar como:
+Y(t)=d/dt X(t)
+
+Integración de las señales
+Al igual que la diferenciación, la inegración de las señales también es aplicable sólo a les señales de tiempo coninuo. 
+Los límites de la integración seán desde el momento presente del tiempo t
+Y(t)= X(t) dt
+Se grafica como la sumatoria de las áreas
+
+Operaciones básicas de señales (variables independientes)
+Esto es exactamente lo contrario del caso anterior, aquó la periodicidad de la señal se varía modificando los valores 
+del eje horizontal, mientras que la amplitud y la fuerza permanecen iguales
+
+*Escalado temoral de señales
+*Reflexión de las señales
+*Cambio del tiempo de las señales
+
+
+Escalado temporal de las señales
+La escalada temporal de las señales implica la modificación de una periodicidad de la señal, manteniendo su amplitud constante.
+Y(t)=X(Bt)
+Con B<1 se dilata y con B>1 se contrae
+
+Reflexión de las señales
+Se reflejan sobre el eje Y
+
+Corrimiento de señales
+El desplazamiento temporal de las señales es probablemente el más imortante, y el más utilizado entre todas operaciones basicas 
+de señales. Se utiliza generalmente paa adelantar o retrasar una señal, como es necesario en la mayoría de las citcunstancias prácticas
+Y(t)=X(t-t0)
+
+
+Taller 
+Señal senosoidal 10ms  Amplitud=4  --> Señal A
+Construir un escalón unitario  --> Señal B
+Realizar suma A+B
+Realizar multiplicación AXB
+Realizar un corrimiento de A en atraso 3ms
+Realizar un corrimiento de B en adelanto de 5ms
