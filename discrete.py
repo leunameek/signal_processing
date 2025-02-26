@@ -10,7 +10,7 @@ omega = float(input("Ingrese el valor de w: "))
 n0 = float(input("Ingrese el valor de n0: "))
 
 # Configurar el tiempo de 0 a 5 segundos y el número de puntos, 50 en este caso para que no se vea feo
-t = np.linspace(0, 5, 50)
+t = np.linspace(0, 5, 100)
 
 def config_stem_plot(signal, title):
     plt.figure()

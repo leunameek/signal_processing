@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 #Emanuel Solarte Melo, Código 1202680
 
-A = 10 #
+A = 2 #
 omega = 24
 t1 = -0.2
 t2 = 0.3
