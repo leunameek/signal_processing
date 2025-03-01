@@ -33,5 +33,6 @@ config_stem_plot(y2, f"Parte 2: Señal x escalón en t=0.5s \nA = {A}, w = {omeg
 
 # Sumar rampa descendente con adelanto de 0.25s
 ramp = - (t + 0.25)  # Rampa descendente y adelantada
+ramp = np.where(t >= 0.25, ramp, 0)
 y3 = y2 + ramp
 config_stem_plot(y3, f"Parte 3: Señal + rampa\nA = {A}, w = {omega}, n0 = {n0}")
