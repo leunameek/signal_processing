@@ -1,0 +1,21 @@
+Los sistemas se usan para procesar una señal con el objetivo de modificarla, por ejemplo sumar o restar información adicional.
+
+Un sistema aplificador de audio, tiene como señal de entrada el sonido captado por un micro y como salida el sonido amplificado
+en los parlantes.
+
+Un sistema para analisis y diseño es una representación de un proceso físico que relaciona las señales de entrada x(t) y las señales de salida
+y(t) obtenidas como respuesta.
+La representación puede ser de tipo matematica o en diargramas de bloques con flechas. El sentido de las flechas indican la entrada o la salida.
+Los sistemas pueden tener.
+  -Una entrada y una salida (SISO - Single Input, Single Output)
+  -Varias entradas, varias salidas (MIMO - Multiple Input, Multiple Output)
+
+La linealidad y la invatianza temporal son dos propuedades del sistema que simplifican enormemente el estudio de los sistemas
+
+Sistemas Lineales.
+Si un sistema es lineal, esto significa que cuando una entrada a un sistema dado se escala por un valor, la salida del sistema se escala en la misma cantidad.
+Pero también obedece el principio de superposición. Significando que, si se suman dos entradas y se pasan a través de un sistema lineal, la salida será la suma de las salidas individuales.
+
+Sistema invariante en el tiempo.
+Tiene la propiedad de que una determinada entrada siempre dará la misma salida (hasta el momento), sin tener en cuenta cuándo se aplicó la entrada al sistema.
+si un sistema es invariable en el tiempo o variable en el tiempo se puede ver en la ecuacion diferencial (o ecuacion de diferencia) qie lo describe. Los sistemas invariantes en el tiempo 
