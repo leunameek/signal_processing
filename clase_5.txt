@@ -1,0 +1,20 @@
+Convolucion
+
+Es una operación que permite calcular la salida de un sistema lineal e invariante en el tiempo mediante la convolución
+de la entrada con la respuesta al impuslso del sistema.
+
+Puede ser usada como:
+En estadistica, como un promedio móvil ponderado
+EN acústica, es el eco, la convolucion del sonido original con una funcion que represente los objetos que rebotan.
+Es importante tener en cuenta que para que la convolucion exista es necesario que la integral converja
+La convolucion es conmutativa.
+Se puede hacer una convolución entre dos señales.
+
+Sub operaciones de la convolución.
+  Sustituir t pot (tao) en x(t) y h(t)
+  Invertir en el tiempo h(tao)
+  Desplazar h(-tao) en t para tener h(t-tao), un desplazamiento hacia la derecha para t > 0 o hacia la izauierda pra t < 0.
+  Determinat para cual t = -infinito... infinito la versión espejeada y deplazada h(t-tao)
+
+Convolucion en discreto
+  se cambia la integral por una sumatoria
