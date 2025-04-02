@@ -1,0 +1,17 @@
+Cualquier x[n] de periodo N se puede descomponer en una suma de N exponenciales
+complejas armónicamente relacionadas, es decir, de frecuencias múltiplo de la
+frecuencia fundamental.
+
+x[n] = sumatoria de N k=0 a subK * e elevado((jk(2*pi)/N)n)
+
+a sub(K) = 1/N sumatoria de N-1 de n = 0 x[n] * e elevado((-jk(2*pi/N))n)
+
+Transformada discreta de Fourier
+X[e^jw] = Sumatoria hasta infinito n = -infinito x[n] * e ^-jwn
+x[n] = 1/2pi Integral de -pi a pi x(e^jw)e^jwn dw
+
+
+Taller
+-Programar un algoritmo para generar la serie discreta de fourier para cualquier señal periodica programable.
+-Programar un algoritmo para obterner la transformacion rápida de Fourier (FFT), de una señal de audio a elección.
+--Una vez realizada la FFT indicar cuales son las frecuencias predomintantes, y cuales más menos importantes.
