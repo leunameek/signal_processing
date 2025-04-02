@@ -18,7 +18,7 @@ def discrete_fourier(x):
 def compute_audio_fft(audio_path):
     fs, audio = wavfile.read(audio_path)
     
-    if len(audio.shape) == 2:  # Si es estéreo lo pasamos a mono
+    if len(audio.shape) == 2:  # Pasamos a mono pq mi canción está en stereo
         audio = audio.mean(axis=1)
 
     N = len(audio)
@@ -48,7 +48,7 @@ def freq_analysis(frequencies, X_fft, top=10):
 if __name__ == "__main__":
   
     print("\nSerie discreta de Fourier\n")
-    fs = 100
+    fs = 150
     T = 1.4
     f0 = 34
 
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10,5))
     
     plt.subplot(1,2,1)
-    plt.plot(t, x)
+    plt.stem(t, x)
     plt.title("Señal programable en el dominio temporal")
     plt.xlabel("t [s]")
     plt.ylabel("x(t)")
