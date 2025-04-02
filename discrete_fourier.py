@@ -2,10 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
-#Serie Discreta de fourier
 def periodic_signal(f, N, T):
     t = np.linspace(0, T, N, endpoint=False)
-    x = f(t)  # función programable
+    x = f(t)
     return t, x
 
 def discrete_fourier(x):
@@ -19,11 +18,12 @@ def discrete_fourier(x):
 def compute_audio_fft(audio_path):
     fs, audio = wavfile.read(audio_path)
     
-    #mi audio está en stereo entonces lo paso a mono con esta bloquecito de código
-    if len(audio.shape) == 2:
+    if len(audio.shape) == 2:  # Si es estéreo lo pasamos a mono
         audio = audio.mean(axis=1)
 
     N = len(audio)
+    t_audio = np.linspace(0, N/fs, N, endpoint=False)
+    
     frequencies = np.fft.fftfreq(N, d=1/fs)
     X_fft = np.fft.fft(audio)
 
@@ -31,7 +31,7 @@ def compute_audio_fft(audio_path):
     frequencies = frequencies[:half]
     X_fft = X_fft[:half]
 
-    return frequencies, X_fft
+    return t_audio, audio, frequencies, X_fft
 
 def freq_analysis(frequencies, X_fft, top=10):
     magnitudes = np.abs(X_fft)
@@ -44,39 +44,61 @@ def freq_analysis(frequencies, X_fft, top=10):
     print("\nFrecuencias menos importantes:")
     for i in range(-1, -top-1, -1):
         print(f"Frecuencia: {frequencies[org_indexes[i]]:.2f} Hz, Amplitud: {magnitudes[org_indexes[i]]:.2f}")
-
+        
 if __name__ == "__main__":
+  
+    print("\nSerie discreta de Fourier\n")
+    fs = 100
+    T = 1.4
+    f0 = 34
 
-    print("\n Serie discreta de Fourier (Programable)\n")
-    fs = 100  # muestras
-    T = 1.4     # periodo en segundos
-    f0 = 34    # frecuencia de la señal
-    
     f = lambda t: np.sin(2*np.pi*f0*t)
-    
+
     t, x = periodic_signal(f, fs, T)
     X = discrete_fourier(x)
     
-    plt.figure()
+    plt.figure(figsize=(10,5))
+    
+    plt.subplot(1,2,1)
+    plt.plot(t, x)
+    plt.title("Señal programable en el dominio temporal")
+    plt.xlabel("t [s]")
+    plt.ylabel("x(t)")
+    plt.grid()
+
+    plt.subplot(1,2,2)
     plt.stem(np.abs(X))
     plt.title("Serie Discreta de Fourier (DFS)")
     plt.xlabel("k")
     plt.ylabel("|X[k]|")
     plt.grid()
+
+    plt.tight_layout()
     plt.show()
-    print("\n FFT de señal de audio \n")
-    
+
+    print("\nFFT de señal de audio\n")
     audio_path = 'ES_Wam Energy - HATAMITSUNAMI.wav'
 
-    frequencies, X_fft = compute_audio_fft(audio_path)
+    t_audio, audio, frequencies, X_fft = compute_audio_fft(audio_path)
 
-    plt.figure()
+    plt.figure(figsize=(10,5))
+
+    plt.subplot(1,2,1)
+    plt.plot(t_audio, audio)
+    plt.title("Señal de audio en el dominio temporal")
+    plt.xlabel("t [s]")
+    plt.ylabel("Amplitud")
+    plt.grid()
+
+    plt.subplot(1,2,2)
     plt.plot(frequencies, np.abs(X_fft))
     plt.title("FFT de la señal de audio")
     plt.xlabel("Frecuencia [Hz]")
     plt.ylabel("|X[k]|")
     plt.grid()
+
+    plt.tight_layout()
     plt.show()
-    
-    print("\n Análisis de frecuencias predominantes \n")
+
+    print("\nAnálisis de frecuencias\n")
     freq_analysis(frequencies, X_fft, top=10)
