@@ -43,7 +43,7 @@ fourier_vals = fourier_series(x_vals)
 mat_data = loadmat('signal.mat')
 print(mat_data.keys())  # Verifica cómo se llama la señal
 
-signal = mat_data['signal'].squeeze()
+signal = mat_data['a'].squeeze()
 
 fs = 256  # frecuencia en hertzzzzz
 t = np.arange(len(signal)) / fs
